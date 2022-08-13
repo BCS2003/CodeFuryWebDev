@@ -4,8 +4,9 @@ from django.contrib.auth import login, logout, authenticate
 from .forms import CustomUserCreationForm, LoginForm
 
 
-def accountsHome(request):
-    return HttpResponse("<h1>Accounts</h1>")
+def home(request):
+    title = "Accounts"
+    return render(request, 'accounts/home.html', context={'title': title})
 
 
 def loginPage(request):
