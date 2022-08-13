@@ -1,7 +1,7 @@
 from django.shortcuts import render
 
 
-def codeFuryWebDevHome(request):
+def home(request):
     title = 'CodeFuryWebDevHome'
     return render(request, 'CodeFuryWebDev/home.html', context={'title': title,
                                                                 'username': request.user})
