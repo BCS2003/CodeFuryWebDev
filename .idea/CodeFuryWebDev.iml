@@ -28,6 +28,7 @@
         <option value="$MODULE_DIR$/CodeFuryWebDev/CodeFuryWebDev/templates" />
         <option value="$MODULE_DIR$/CodeFuryWebDev/chats/templates" />
         <option value="$MODULE_DIR$/CodeFuryWebDev/accounts/templates" />
+        <option value="$MODULE_DIR$/CodeFuryWebDev/posts/templates" />
       </list>
     </option>
   </component>
