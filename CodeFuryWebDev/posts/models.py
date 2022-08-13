@@ -12,3 +12,6 @@ class PostModel(models.Model):
     detailed_disc = models.TextField()
 
     REQUIRED_FIELDS = ['founders', 'startup_name', 'amount', 'equity']
+
+    def evaluation(self):
+        return self.amount * 100 / self.equity

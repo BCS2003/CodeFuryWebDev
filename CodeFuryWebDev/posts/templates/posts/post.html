@@ -7,9 +7,9 @@
 {% block content %}
     <p>{{ message }}</p>
     <form method="post">
-        <label for="id_founders">Founders: </label>
-        <input name="founders" id="id_founders">
-        <br>
+{#        <label for="id_founders">Founders: </label>#}
+{#        <input name="founders" id="id_founders">#}
+{#        <br>#}
         <a class="add-co-founder">+</a>
         {{ form.as_p }}
         {% csrf_token %}

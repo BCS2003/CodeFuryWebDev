@@ -8,4 +8,17 @@
     {% include 'urls.html' %}
     <br><br>
     {% include 'posts/urls.html' %}
+    <br><br>
+    {% for p in posts %}
+        <div style="background: aliceblue">
+            <h3>StartUp: {{ p.startup_name }}</h3>
+            <h4 style="color: gray">{{ p.short_disc }}</h4>
+            <h4>--------------------------------------</h4>
+            <p style="font-weight: 700">Financials: {{ p.fin_details }}</p>
+            <h4>Asking for ${{ p.amount }} for {{ p.equity }}% equity ->
+                Evaluation of ${{ p.evaluation }}</h4>
+            <p>More Details: {{ p.detailed_disc }}</p>
+        </div>
+        <br>
+    {% endfor %}
 {% endblock %}
