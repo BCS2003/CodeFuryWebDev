@@ -18,7 +18,7 @@ def loginPage(request):
             user = authenticate(username=form.cleaned_data['username'], password=form.cleaned_data['password'])
             if user is not None:
                 login(request, user)
-                return redirect('projectRoadMapHome')
+                return redirect('codeFuryWebDevHome')
             message = 'Login failed!'
     return render(request, 'accounts/login.html', context={'title': title,
                                                            'form': form,
@@ -27,7 +27,7 @@ def loginPage(request):
 
 def logoutPage(request):
     logout(request)
-    return redirect('projectRoadMapHome')
+    return redirect('codeFuryWebDevHome')
 
 
 def signupPage(request):
@@ -44,7 +44,7 @@ def signupPage(request):
             user = authenticate(username=user.username, password=raw_password)
             login(request, user)
 
-            return redirect('projectRoadMapHome')
+            return redirect('codeFuryWebDevHome')
         else:
             message = 'something went wrong, try again'
     return render(request, 'accounts/signup.html', context={'title': title,

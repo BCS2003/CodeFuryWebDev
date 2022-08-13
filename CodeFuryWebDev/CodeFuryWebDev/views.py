@@ -1,5 +1,7 @@
-from django.shortcuts import render, HttpResponse
+from django.shortcuts import render
 
 
 def codeFuryWebDevHome(request):
-    return HttpResponse("<h1>Home</h1>")
+    title = 'CodeFuryWebDevHome'
+    return render(request, 'CodeFuryWebDev/home.html', context={'title': title,
+                                                                'username': request.user})
