@@ -1,9 +1,37 @@
 {% extends 'base.html' %}
+
+{% block head %}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+{% endblock %}
+
 {% block content %}
     <p>{{ message }}</p>
     <form method="post">
+        <label for="id_founders">Founders: </label>
+        <input name="founders" id="id_founders">
+        <br>
+        <a class="add-co-founder">+</a>
         {{ form.as_p }}
         {% csrf_token %}
-        <button type="submit" >Submit</button>
+        <button type="submit">Submit</button>
     </form>
+
+    <script>
+        $('.add-co-founder').on("click", function () {
+                let $this = document.getElementById('id_founders')
+                let $clone = $this.clone()
+
+                let name = $clone.attr('name')
+                let n = parseInt(name.split('_')[1]) + 1
+                name = 'founders_' + n
+
+                $clone.val('')
+                $clone.attr('name', name)
+                $clone.appendTo($this.parent())
+                $this.removeClass('add-co-founder')
+                $this.off('input', arguments.callee)
+                $clone.on('input', arguments.callee)
+            }
+        )
+    </script>
 {% endblock %}

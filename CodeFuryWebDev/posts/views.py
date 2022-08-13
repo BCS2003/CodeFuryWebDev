@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from .models import PostModel
+from .forms import PostCreationForm
 
 
 def home(request):
@@ -8,12 +8,13 @@ def home(request):
 
 
 def creatPost(request):
-    form = PostModel()
+    form = PostCreationForm()
     title = 'Login'
     message = ''
     if request.method == 'POST':
-        form = PostModel(request.POST)
-        pass
+        form = PostCreationForm(request.POST)
+        if form.is_valid():
+            print(form.cleaned_data)
         redirect('postsHome')
     return render(request, 'posts/post.html', context={'title': title,
                                                        'form': form,

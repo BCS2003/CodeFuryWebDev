@@ -1,6 +1,14 @@
 from django.db import models
+from accounts.models import CustomUser
 
 
-# todo: founders, company name, short description, fin details, more details, (investment amount, equity) -> evaluation
 class PostModel(models.Model):
-    pass
+    founders = models.ManyToManyField(CustomUser, related_name='co_founders')
+    startup_name = models.CharField(max_length=25, unique=True)
+    short_disc = models.CharField(max_length=100)
+    fin_details = models.CharField(max_length=100)
+    amount = models.IntegerField()
+    equity = models.IntegerField()
+    detailed_disc = models.TextField()
+
+    REQUIRED_FIELDS = ['founders', 'startup_name', 'amount', 'equity']
