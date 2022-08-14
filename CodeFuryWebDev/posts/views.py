@@ -19,7 +19,7 @@ def creatPost(request):
             form_c = form.cleaned_data
             founders = form_c.pop('founders')
             pm = PostModel.objects.create(**form_c)
-            pm.founders.add(founders.id)
+            # pm.founders.add(founders.id)
         return redirect('postsHome')
     return render(request, 'posts/post.html', context={'title': title,
                                                        'form': form,

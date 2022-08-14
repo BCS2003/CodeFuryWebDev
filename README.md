@@ -65,16 +65,8 @@ running on, which is 8000.
 => Port 8000 is now publicly accessible from http://5bebd69e5222.v2.localtunnel.com ...
 ```
 
-## Tests
-
-To run the tests, `cd` into the directory where `manage.py` is:
-```sh
-(env)$ python manage.py test gc_app
-```
-
 
 ###Contribution
-
 1.Amith (https://github.com/Amith225)<br>
 2.Shravan (https://github.com/myselfshravan)<br>
 3.Ansh<br>
